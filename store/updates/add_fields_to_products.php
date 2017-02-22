@@ -12,6 +12,8 @@ class AddFieldsToProducts extends Migration {
         Schema::table('feegleweb_octoshop_products', function($table) {
             $table->integer('owner_id')->unsigned()->index()->nullable();
             $table->decimal('selling_price',10,2);
+            $table->decimal('pct_sales_addon',10,2);
+            $table->decimal('pct_vat',10,2);
         });
     }
 

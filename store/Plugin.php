@@ -49,10 +49,24 @@ class Plugin extends PluginBase {
             $form->addTabFields([
                 'owner_id' => [
                     'label' => 'Product Owner',
-                    'tab' => 'Owner',
+                    'tab' => 'Settings',
                     'span' => 'both',
                     'type' => 'dropdown',
                     'options' => Member::getMemberIdOptions(),
+                ],
+                 'pct_sales_addon' => [
+                    'label' => 'Sales Addon (%)',
+                    'tab' => 'Settings',
+                    'span' => 'left',
+                    'type' => 'number',
+                    'default'=>'3'
+                ],
+                'pct_vat' => [
+                    'label' => 'VAT (%)',
+                    'tab' => 'Settings',
+                    'span' => 'right',
+                    'type' => 'number',
+                    'default'=>'5'
                 ],
             ]);
         });

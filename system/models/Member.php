@@ -195,7 +195,6 @@ class Member extends BaseUser {
         $users->each(function($user) use (&$usersOptions) {
             $usersOptions[$user->id] = "{$user->email} - {$user->name} {$user->surname}";
         });
-
         return $usersOptions;
     }
 
