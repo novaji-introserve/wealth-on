@@ -1,0 +1,26 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  app_name:
+    label: 'Application Name'
+    comment: 'General name of our application (app_name)'
+    description: 'General name of application'
+    type: text
+  max_generations:
+    label: 'Maximum Generations'
+    comment: 'Maximum generations (max_generations)'
+    description: 'Maximum generations for a members downline or upline'
+    type: number
+  slot_factor:
+    label: 'Slot Factor'
+    comment: 'Slot Factor (slot_factor)'
+    description: 'Factor used to compute maximum members in a generation'
+    type: number
+  num_facebook_comments:
+    label: 'Facebook Comments'
+    comment: 'Number of Facebook Comments to show'
+    description: 'Number of Facebook Comments to show'
+    type: number
+ 

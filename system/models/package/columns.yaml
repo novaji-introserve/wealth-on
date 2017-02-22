@@ -1,0 +1,15 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+        invisible: true
+    name:
+        label: Name
+        searcheable: true
+    registration_fee:
+        label: Registration Fee
+        searcheable: true

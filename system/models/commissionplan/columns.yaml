@@ -1,0 +1,26 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    user_package_id:
+        label: Member Package
+        relation: member_package
+        select: name
+        searcheable: false
+    parent_package_id:
+        label: Parent Package
+        relation: parent_package
+        select: name
+        searcheable: false
+    parent_generation:
+        label: Parent Generation
+        relation: parent_generation
+        select: generation
+        searcheable: false
+    pct:
+        label: %Age Commission
+        searcheable: true

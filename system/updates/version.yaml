@@ -1,0 +1,16 @@
+1.0.1:
+    - First version
+    - create_packages_table.php
+    - create_generations_table.php
+    - create_commissions_table.php
+    - create_commission_types_table.php
+    - create_commission_plans_table.php
+    - add_fields_to_users.php
+1.0.2:
+    - Update Store types
+    - create_store_types_table.php
+    - create_referrals_table.php
+    - create_invites_table.php
+    - create_bank_accounts_table.php
+    - seed.php
+    

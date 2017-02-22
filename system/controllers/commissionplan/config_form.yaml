@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Commission Plan
+
+# Model Form Field configuration
+form: $/wealthon/system/models/commissionplan/fields.yaml
+
+# Model Class name
+modelClass: Wealthon\System\Models\CommissionPlan
+
+# Default redirect location
+defaultRedirect: wealthon/system/commissionplan
+
+# Create page
+create:
+    title: Create Commission Plan
+    redirect: wealthon/system/commissionplan/update/:id
+    redirectClose: wealthon/system/commissionplan
+
+# Update page
+update:
+    title: Edit Commission Plan
+    redirect: wealthon/system/commissionplan
+    redirectClose: wealthon/system/commissionplan
+
+# Preview page
+preview:
+    title: Preview Commission Plan

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Store Type
+
+# Model Form Field configuration
+form: $/wealthon/system/models/storetype/fields.yaml
+
+# Model Class name
+modelClass: Wealthon\System\Models\StoreType
+
+# Default redirect location
+defaultRedirect: wealthon/system/storetype
+
+# Create page
+create:
+    title: Create Store Type
+    redirect: wealthon/system/storetype/update/:id
+    redirectClose: wealthon/system/storetype
+
+# Update page
+update:
+    title: Edit Store Type
+    redirect: wealthon/system/storetype
+    redirectClose: wealthon/system/storetype
+
+# Preview page
+preview:
+    title: Preview Store Type

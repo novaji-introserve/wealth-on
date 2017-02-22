@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Commission Type
+
+# Model Form Field configuration
+form: $/wealthon/system/models/commissiontype/fields.yaml
+
+# Model Class name
+modelClass: Wealthon\System\Models\CommissionType
+
+# Default redirect location
+defaultRedirect: wealthon/system/commissiontype
+
+# Create page
+create:
+    title: Create Commission Type
+    redirect: wealthon/system/commissiontype/update/:id
+    redirectClose: wealthon/system/commissiontype
+
+# Update page
+update:
+    title: Edit Commission Type
+    redirect: wealthon/system/commissiontype
+    redirectClose: wealthon/system/commissiontype
+
+# Preview page
+preview:
+    title: Preview Commission Type

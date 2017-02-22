@@ -1,0 +1,34 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Name
+        type: text
+        required: true
+        span: full
+    registration_fee:
+        label: Registration Fee
+        type: number
+        required: true
+        span: left
+    max_introduction_commission:
+        label: Maximum Introduction Commission
+        type: number
+        required: true
+        span: right
+    sales_commission:
+        label: Sales Commission
+        type: number
+        required: true
+        span: left
+    store_type_id:
+        label: Store Type
+        type: dropdown
+        span: right
+    insurance_benefit:
+        label: Insurance Benefit
+        type: textarea
+        span: full
+        

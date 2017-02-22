@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Package
+
+# Model Form Field configuration
+form: $/wealthon/system/models/package/fields.yaml
+
+# Model Class name
+modelClass: Wealthon\System\Models\Package
+
+# Default redirect location
+defaultRedirect: wealthon/system/package
+
+# Create page
+create:
+    title: Create Package
+    redirect: wealthon/system/package/update/:id
+    redirectClose: wealthon/system/package
+
+# Update page
+update:
+    title: Edit Package
+    redirect: wealthon/system/package
+    redirectClose: wealthon/system/package
+
+# Preview page
+preview:
+    title: Preview Package

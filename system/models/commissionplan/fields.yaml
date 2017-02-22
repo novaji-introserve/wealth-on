@@ -1,0 +1,25 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    user_package_id:
+        label: Member Package
+        type: dropdown
+        span: left
+        required: true
+    parent_package_id:
+        label: Parent Package
+        type: dropdown
+        span: right
+        required: true
+    parent_generation:
+        label: Parent Generation
+        type: dropdown
+        span: left
+        required: true
+    pct:
+        label: %age Commission
+        type: number
+        span: right
+        required: true

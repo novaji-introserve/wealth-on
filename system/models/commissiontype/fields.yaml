@@ -1,0 +1,16 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Name
+        type: text
+        required: true
+        span: full
+    code:
+        label: Code
+        type: text
+        required: true
+        span: full
+        

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Generation
+
+# Model Form Field configuration
+form: $/wealthon/system/models/generation/fields.yaml
+
+# Model Class name
+modelClass: Wealthon\System\Models\Generation
+
+# Default redirect location
+defaultRedirect: wealthon/system/generation
+
+# Create page
+create:
+    title: Create Generation
+    redirect: wealthon/system/generation/update/:id
+    redirectClose: wealthon/system/generation
+
+# Update page
+update:
+    title: Edit Generation
+    redirect: wealthon/system/generation
+    redirectClose: wealthon/system/generation
+
+# Preview page
+preview:
+    title: Preview Generation
