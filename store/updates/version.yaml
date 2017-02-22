@@ -2,3 +2,6 @@
     - Create Member Products Table
     - create_member_products_table.php
     - create_stores_table.php
+1.0.2:
+    - Add fields to Products
+    - add_fields_to_products.php

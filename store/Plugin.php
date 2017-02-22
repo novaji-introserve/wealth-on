@@ -1,25 +1,29 @@
-<?php namespace Wealthon\Store;
+<?php
+
+namespace Wealthon\Store;
 
 use Backend;
 use System\Classes\PluginBase;
+use Feegleweb\OctoshopLite\Controllers\Products as ProductController;
+use Feegleweb\OctoshopLite\Models\Product;
+use Wealthon\System\Models\Member;
 
 /**
  * store Plugin Information File
  */
-class Plugin extends PluginBase
-{
+class Plugin extends PluginBase {
+
     /**
      * Returns information about this plugin.
      *
      * @return array
      */
-    public function pluginDetails()
-    {
+    public function pluginDetails() {
         return [
-            'name'        => 'Wealth-On Store',
+            'name' => 'Wealth-On Store',
             'description' => 'Online Store for Wealth-On',
-            'author'      => 'Jonathan Ogbimi',
-            'icon'        => 'icon-shopping-basket'
+            'author' => 'Jonathan Ogbimi',
+            'icon' => 'icon-shopping-basket'
         ];
     }
 
@@ -28,9 +32,8 @@ class Plugin extends PluginBase
      *
      * @return void
      */
-    public function register()
-    {
-
+    public function register() {
+        
     }
 
     /**
@@ -38,9 +41,21 @@ class Plugin extends PluginBase
      *
      * @return array
      */
-    public function boot()
-    {
-
+    public function boot() {
+        ProductController::extendFormFields(function($form, $model, $context) {
+            if (!$model instanceof Product) {
+                return;
+            }
+            $form->addTabFields([
+                'owner_id' => [
+                    'label' => 'Product Owner',
+                    'tab' => 'Owner',
+                    'span' => 'both',
+                    'type' => 'dropdown',
+                    'options' => Member::getMemberIdOptions(),
+                ],
+            ]);
+        });
     }
 
     /**
@@ -48,8 +63,7 @@ class Plugin extends PluginBase
      *
      * @return array
      */
-    public function registerComponents()
-    {
+    public function registerComponents() {
         return []; // Remove this line to activate
 
         return [
@@ -62,8 +76,7 @@ class Plugin extends PluginBase
      *
      * @return array
      */
-    public function registerPermissions()
-    {
+    public function registerPermissions() {
         return []; // Remove this line to activate
 
         return [
@@ -79,18 +92,18 @@ class Plugin extends PluginBase
      *
      * @return array
      */
-    public function registerNavigation()
-    {
+    public function registerNavigation() {
         return []; // Remove this line to activate
 
         return [
             'store' => [
-                'label'       => 'store',
-                'url'         => Backend::url('wealthon/store/mycontroller'),
-                'icon'        => 'icon-leaf',
+                'label' => 'store',
+                'url' => Backend::url('wealthon/store/mycontroller'),
+                'icon' => 'icon-leaf',
                 'permissions' => ['wealthon.store.*'],
-                'order'       => 500,
+                'order' => 500,
             ],
         ];
     }
+
 }
