@@ -19,7 +19,7 @@ class AddFieldsToProducts extends Migration {
 
     public function down() {
         Schema::table('users', function ($table) {
-            $table->dropColumn(['package_id', 'parent_id', 'referral_id','generation_id','slot_id','is_director','store_enabled','is_root']);
+            $table->dropColumn(['owner_id','pct_vat','pct_sales_addon','selling_price']);
         });
     }
 
