@@ -11,14 +11,14 @@ class AddFieldsToProducts extends Migration {
     public function up() {
         Schema::table('feegleweb_octoshop_products', function($table) {
             $table->integer('owner_id')->unsigned()->index()->nullable();
-            $table->decimal('selling_price',10,2);
+            $table->decimal('selling_price',10,2)->nullable();
             $table->decimal('pct_sales_addon',10,2);
             $table->decimal('pct_vat',10,2);
         });
     }
 
     public function down() {
-        Schema::table('users', function ($table) {
+        Schema::table('feegleweb_octoshop_products', function ($table) {
             $table->dropColumn(['owner_id','pct_vat','pct_sales_addon','selling_price']);
         });
     }

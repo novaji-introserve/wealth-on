@@ -259,7 +259,9 @@ class Member extends BaseUser {
 
         #dd($result);
     }
+
     # set commisiin based on payment made
+
     public function setCommissions($registration_fee) {
         /*
          * pay all members commission
@@ -296,27 +298,34 @@ class Member extends BaseUser {
             $parents[$referralKey] = $originalParent;
             $parents[1] = $referralObj;
         }
+        #dd($parents);
 
         foreach ($parents as $generation => $parent) {
             # find the plan
 
-            if ($parent->package_id) {
+            if ($parent->package_id and $parent->shouldEarn()) {
                 $parent_package = $parent->package;
-                $plan = CommissionPlan::where('parent_package_id', $parent_package->id)
-                                ->where('user_package_id', $package->id)
-                                ->where('parent_generation_id', $generation)->first();
-                $commission_amt = (($plan->pct / 100) * $registration_fee);
-                #dd($commission);
-                $commission = new Commission;
-                $commission->owner_id = $parent->id;
-                $commission->user_id = $this->id;
-                $commission->notes = 'Commission earned on member registration';
-                $commission->plan_id = $plan->id;
-                $commission->amount = $commission_amt;
-                $commission->type_id = $type->id;
-                $commission->save();
+                if ($parent_package) {
+                    $plan = CommissionPlan::where('parent_package_id', $parent_package->id)
+                                    ->where('user_package_id', $package->id)
+                                    ->where('parent_generation_id', $generation)->first();
+                    $commission_amt = (($plan->pct / 100) * $registration_fee);
+                    #dd($commission);
+                    $commission = new Commission; 
+                    $commission->owner_id = $parent->id;
+                    $commission->user_id = $this->id;
+                    $commission->notes = 'Commission earned on member registration';
+                    $commission->plan_id = $plan->id;
+                    $commission->amount = $commission_amt;
+                    $commission->type_id = $type->id;
+                    $commission->save();
+                }
             }
         }
+    }
+    
+    public function shouldEarn(){
+        return ($this->is_root == 0);
     }
 
     public static function randomPassword($length = 10) {
@@ -334,9 +343,9 @@ class Member extends BaseUser {
 
         return $password;
     }
-    
-    public function incentive($status){
-        return Commission::where('owner_id',$this->id)->where('status',strtolower($status))->sum('amount');
+
+    public function incentive($status) {
+        return Commission::where('owner_id', $this->id)->where('status', strtolower($status))->sum('amount');
     }
 
 }

@@ -59,14 +59,16 @@ class Plugin extends PluginBase {
                     'tab' => 'Settings',
                     'span' => 'left',
                     'type' => 'number',
-                    'default'=>'3'
+                    'default'=>'3',
+                    'comment'=>'Percentage of Price to add to Selling'
                 ],
                 'pct_vat' => [
                     'label' => 'VAT (%)',
                     'tab' => 'Settings',
                     'span' => 'right',
                     'type' => 'number',
-                    'default'=>'5'
+                    'default'=>'5',
+                    'comment'=>'Applicable VAT%'
                 ],
             ]);
         });
